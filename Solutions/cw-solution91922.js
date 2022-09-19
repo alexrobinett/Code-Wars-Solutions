@@ -32,64 +32,65 @@
 
 // SOLUTION
 
+
 function greet(language) {
-    let greetings = {
-    english: 'Welcome',
-    czech: 'Vitejte',
-    danish: 'Velkomst',
-    dutch: 'Welkom',
-    estonian: 'Tere tulemast',
-    finnish: 'Tervetuloa',
-    flemish: 'Welgekomen',
-    french: 'Bienvenue',
-    german: 'Willkommen',
-    irish: 'Failte',
-    italian: 'Benvenuto',
-    latvian: 'Gaidits',
-    lithuanian: 'Laukiamas',
-    polish: 'Witamy',
-    spanish: 'Bienvenido',
-    swedish: 'Valkommen',
-    welsh: 'Croeso'
-      }
-      
-      if (language == "english"){
-        return greetings.english
-      }else if (language == "czech"){
-        return greetings.czech
-      }else if (language == "danish"){
-        return greetings.danish
-      }else if (language == "dutch"){
-        return greetings.dutch
-      }else if (language == "estonian"){
-        return greetings.estonian
-      }else if (language == "flemish"){
-        return greetings.flemish
-      }else if (language == "french"){
-        return greetings.french
-      }else if (language == "german"){
-        return greetings.german
-      }else if (language == "irish"){
-        return greetings.irish
-      }else if (language == "italian"){
-        return greetings.italian
-      }else if (language == "latvian"){
-        return greetings.latvian
-      }else if (language == "lithuanian"){
-        return greetings.lithuanian
-      }else if (language == "polish"){
-        return greetings.polish
-      }else if (language == "spanish"){
-        return greetings.spanish
-      }else if (language == "swedish"){
-        return greetings.swedish
-      }else if (language == "welsh"){
-        return greetings.welsh
-      }else if(language == "finnish"){
-        return greetings.finnish
-      }else {return "Welcome"}
-      
+  let greetings = {
+  english: 'Welcome',
+  czech: 'Vitejte',
+  danish: 'Velkomst',
+  dutch: 'Welkom',
+  estonian: 'Tere tulemast',
+  finnish: 'Tervetuloa',
+  flemish: 'Welgekomen',
+  french: 'Bienvenue',
+  german: 'Willkommen',
+  irish: 'Failte',
+  italian: 'Benvenuto',
+  latvian: 'Gaidits',
+  lithuanian: 'Laukiamas',
+  polish: 'Witamy',
+  spanish: 'Bienvenido',
+  swedish: 'Valkommen',
+  welsh: 'Croeso'
     }
+    
+    if (language == "english"){
+      return greetings.english
+    }else if (language == "czech"){
+      return greetings.czech
+    }else if (language == "danish"){
+      return greetings.danish
+    }else if (language == "dutch"){
+      return greetings.dutch
+    }else if (language == "estonian"){
+      return greetings.estonian
+    }else if (language == "flemish"){
+      return greetings.flemish
+    }else if (language == "french"){
+      return greetings.french
+    }else if (language == "german"){
+      return greetings.german
+    }else if (language == "irish"){
+      return greetings.irish
+    }else if (language == "italian"){
+      return greetings.italian
+    }else if (language == "latvian"){
+      return greetings.latvian
+    }else if (language == "lithuanian"){
+      return greetings.lithuanian
+    }else if (language == "polish"){
+      return greetings.polish
+    }else if (language == "spanish"){
+      return greetings.spanish
+    }else if (language == "swedish"){
+      return greetings.swedish
+    }else if (language == "welsh"){
+      return greetings.welsh
+    }else if(language == "finnish"){
+      return greetings.finnish
+    }else {return "Welcome"}
+    
+  }
 
 
 // TEST
@@ -103,4 +104,31 @@ describe("Tests", () => {
   });
   
 
-  // push test
+  // PROBLEM TWO
+
+//   Debugging sayHello function
+
+// The starship Enterprise has run into some problem when creating a program to greet everyone as they come aboard. It is your job to fix the code and get the program working again!
+
+// Example output:
+
+// Hello, Mr. Spock
+
+// SOLUTION
+
+function sayHello(name) {
+  return `Hello, ${name}`
+}
+
+
+
+// TEST
+
+describe("Tests", () => {
+  it("test", () => {
+Test.assertEquals(sayHello('Mr. Spock'), 'Hello, Mr. Spock')
+Test.assertEquals(sayHello('Captain Kirk'), 'Hello, Captain Kirk')
+Test.assertEquals(sayHello('Liutenant Uhura'), 'Hello, Liutenant Uhura')
+Test.assertEquals(sayHello('Dr. McCoy'), 'Hello, Dr. McCoy')
+  });
+});
