@@ -16,15 +16,15 @@
 
 // SOLUTION
 
-
 function gooseFilter (birds) {
     var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
     
-    result = birds.filter(geese => ...geese))
+    newBirds = birds.filter( (bird ) => !geese.includes( bird ) );
 
-    return result
+    return newBirds
 
   };
+
 
 
 
