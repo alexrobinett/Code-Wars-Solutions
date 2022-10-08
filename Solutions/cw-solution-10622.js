@@ -16,13 +16,12 @@
 function remove (string) {
     let arr = string.split('')
     
-    if (arr[arr.length - 1] === '!'){
-        let ans = arr.pop()
-        return ans
+    if(arr[arr.length - 1] === "!"){
+        let ans = arr.slice(0, -1);
+         return ans.join('')
     }else return string
-    
+  
   }
-
 
 
 

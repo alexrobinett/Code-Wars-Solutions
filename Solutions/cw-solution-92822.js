@@ -15,21 +15,13 @@
 
 // SOLUTION
 
-function basicOp(oper, val1, val2){
- // figure out operation
- 
- if(oper === "+"){
-    return val1 + val2
- }else if (oper === "-"){
-    return val1 - val2
- }else if (oper === "*"){
-    return val1 * val2
- }else if (oper === "/"){
-    return val1 / val2
+function shortcut (string) {
+   let vowels = /aeiou/ig
+   let arr = string.split('')
+   let ans = arr.filter(d => !vowels.includes(d));
+   
+   return ans.toString();
  }
- 
-}
-
 
 
 
