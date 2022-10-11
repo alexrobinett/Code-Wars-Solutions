@@ -10,15 +10,15 @@
 // SOLUTION
 
 var capitals = function (word) {
-    // convert string to Array
     let capitalArr = []
-    for(let i = 0; i < word.length; ){
-        capitalArr.push(i)
+    for(let i = 0; i < word.length; i++){
+        if(word[i] == word[i].toUpperCase()){
+            capitalArr.push(i)
+        }
     }
     return capitalArr
    
 };
-
 
 
 // TEST
