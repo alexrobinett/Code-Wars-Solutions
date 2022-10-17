@@ -12,14 +12,9 @@
 
 // SOLUTION
 function descendingOrder(n){
-    const arr = String(n)
-    .split('')
-    .map(str => Number(str));
-    let sortedNumbers = arr.sort((a,b) => b - a)
-    sortedNumbers = sortedNumbers.join(",")
-    return parseInt(sortedNumbers)
+    let solution = ( parseInt( n.toString().split('').sort((a,b)=> b - a).join('')))    
+    return solution
   }
-
 
 // TEST
 
