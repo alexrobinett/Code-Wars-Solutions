@@ -8,8 +8,8 @@
 // SOLUTION
 
 function squareDigits(num){
-    let arr = Array.from(num);
-    let solution = arr.map((x) => Math.pow(x,2))
+    let arr = (num.toString().split('').map(Number));
+    let solution = ( parseInt(arr.map(x => Math.pow(x,2)).join("")))
     return solution;
   }
 // TEST
