@@ -1,42 +1,52 @@
-// Keep Hydrated!
+// Highest Scoring Word
 
-// Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+// Given a string of words, you need to find the highest scoring word.
 
-// You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
+// Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
 
-// For example:
+// You need to return the highest scoring word as a string.
 
-// time = 3 ----> litres = 1
+// If two words score the same, return the word that appears earliest in the original string.
 
-// time = 6.7---> litres = 3
+// All letters will be lowercase and all inputs will be valid.
 
-// time = 11.8--> litres = 5
 
 
 // // // // // SOLUTION
 
-// P: Getting a the a number called time
-// R: returning a amount of water needed rounded down.
-// E: Return 3 if time is 6.7
-// P: 
 
-function litres(time) {
-    return Math.floor(time * 0.5)
+function high(x){
+    //coonvert to an array
+    let wordArr = x.split(" ")
+    //check each string in the array for highest point value
+    function checkword(word){
+      let wordScore = 0
+      for(let i = 0; i < word.length; i++){
+       wordScore += word.charCodeAt(i) - 96
+      }
+      return wordScore
+    }
+    let scoredArr = wordArr.map(checkword)
+    
+    let max = Math.max(...scoredArr)
+    
+    return wordArr[scoredArr.indexOf(max)]
   }
      
 //  //   // // // TEST
-//  const chai = require("chai");
-//  const assert = chai.assert;
-//  chai.config.truncateThreshold=0;
- 
-//  describe('Fixed tests', () => {
-//    it('Tests', () => {
-//      assert.strictEqual(litres(2), 1, 'should return 1 litre');
-//      assert.strictEqual(litres(1.4), 0, 'should return 0 litres');
-//      assert.strictEqual(litres(12.3), 6, 'should return 6 litres');
-//      assert.strictEqual(litres(0.82), 0, 'should return 0 litres');
-//      assert.strictEqual(litres(11.8), 5, 'should return 5 litres');
-//      assert.strictEqual(litres(1787), 893, 'should return 893 litres');
-//      assert.strictEqual(litres(0), 0, 'should return 0 litres');
-//    });
-//  });
+// const chai = require("chai");
+// const assert = chai.assert;
+// chai.config.truncateThreshold=0;
+
+// describe("Basic tests", () => {
+//   it("Testing for fixed tests", () => {
+//     assert.strictEqual(high('man i need a taxi up to ubud'), 'taxi');
+//     assert.strictEqual(high('what time are we climbing up the volcano'), 'volcano'); 
+//     assert.strictEqual(high('take me to semynak'), 'semynak');   
+//     assert.strictEqual(high('aa b'), 'aa');
+//     assert.strictEqual(high('b aa'), 'b');
+//     assert.strictEqual(high('bb d'), 'bb');
+//     assert.strictEqual(high('d bb'), 'd');
+//     assert.strictEqual(high('aaa b'), 'aaa');
+//   })
+// });
