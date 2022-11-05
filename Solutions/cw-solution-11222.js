@@ -15,9 +15,13 @@
 
 // write the function isAnagram
 var isAnagram = function(test, original) {
-let testArr = test.split()
-
-};
+    let testArr = test.toLowerCase().split('').sort()
+    let orginalArr = original.toLowerCase().split("").sort()
+    let is_anagram = (orginalArr.length == testArr.length) && orginalArr.every(function(element, index) {
+        return element === testArr[index]; 
+    });
+    return is_anagram
+    };
 
 
 //  //   // // // TEST
