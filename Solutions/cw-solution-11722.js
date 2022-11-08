@@ -1,32 +1,41 @@
-// Pre-FizzBuzz Workout #1
+// How old will I be in 2099?
+// Philip's just turned four and he wants to know how old he will be in various years in the future such as 2090 or 3044. His parents can't keep up calculating this so they've begged you to help them out by writing a programme that can answer Philip's endless questions.
 
-// This is the first step to understanding FizzBuzz.
+// Your task is to write a function that takes two parameters: the year of birth and the year to count years in relation to. As Philip is getting more curious every day he may soon want to know how many years it was until he would be born, so your function needs to work with both dates in the future and in the past.
 
-// Your inputs: a positive integer, n, greater than or equal to one. n is provided, you have NO CONTROL over its value.
+// Provide output in this format: For dates in the future: "You are ... year(s) old." For dates in the past: "You will be born in ... year(s)." If the year of birth equals the year requested return: "You were born this very year!"
 
-// Your expected output is an array of positive integers from 1 to n (inclusive).
+// "..." are to be replaced by the number, followed and proceeded by a single space. Mind that you need to account for both "year" and "years", depending on the result.
 
-// Your job is to write an algorithm that gets you from the input to the output.
+// Good Luck!
 
 // SOLUTION
-function preFizz(n) {
-    let array = []
-    for (let i = 1; i <= n; i++){
-      array.push(i)
-    }
-    return array
+
+function  calculateAge(yob,year) {
+  if (yob - year === 1 && yob > year){
+    return `You will be born in ${yob - year} year.`
+  }else if (year - yob === 1 && year > yob){
+    return `You are ${year - yob} year old.`
+  }else if (yob > year){
+    return `You will be born in ${yob - year} years.`
+  }else if (year === yob){
+    return 'You were born this very year!'
+  }else if (yob < year){
+    return `You are ${year - yob} years old.`
   }
+}
 
 // TEST
 
-// const { assert } = require('chai');
-
-// describe('Fixed Tests', () => {
-//   it("Test", () => {
-//     assert.sameOrderedMembers(preFizz(1), [1], `Array should be from 1 to 1`);
-//     assert.sameOrderedMembers(preFizz(2), [1,2], `Array should be from 1 to 2`);
-//     assert.sameOrderedMembers(preFizz(3), [1,2,3], `Array should be from 1 to 3`);
-//     assert.sameOrderedMembers(preFizz(4), [1,2,3,4], `Array should be from 1 to 4`);
-//     assert.sameOrderedMembers(preFizz(5), [1,2,3,4,5], `Array should be from 1 to 5`);
-//   });
-// });
+// describe("Random test cases", function() {
+//   Test.assertEquals(calculateAge(2012, 2016),"You are 4 years old.");
+//   Test.assertEquals(calculateAge(1989, 2016),"You are 27 years old.");
+//   Test.assertEquals(calculateAge(2000, 2090),"You are 90 years old.");
+//   Test.assertEquals(calculateAge(2000, 1990),"You will be born in 10 years.");
+//   Test.assertEquals(calculateAge(3400, 3400),"You were born this very year!"); 
+//   Test.assertEquals(calculateAge(900, 2900),"You are 2000 years old.");
+//   Test.assertEquals(calculateAge(2010, 1990),"You will be born in 20 years.");
+//   Test.assertEquals(calculateAge(2010, 1500),"You will be born in 510 years.");
+//   Test.assertEquals(calculateAge(2011, 2012),"You are 1 year old.");
+//   Test.assertEquals(calculateAge(2000, 1999),"You will be born in 1 year.");
+//   })
