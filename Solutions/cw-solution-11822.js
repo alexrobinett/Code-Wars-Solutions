@@ -7,7 +7,7 @@
 
 // "..." are to be replaced by the number, followed and proceeded by a single space. Mind that you need to account for both "year" and "years", depending on the result.
 
-Good Luck!
+// Good Luck!
 // SOLUTION
 
 function  calculateAge(yob,year) {
