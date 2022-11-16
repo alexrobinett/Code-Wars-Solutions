@@ -11,7 +11,6 @@ function solution(nums){
       return []
     }else return nums.sort(function(a, b){return a-b})
   }
-}
 //  //   // // // TEST
 
 // const { assert } = require("chai")
